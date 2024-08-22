@@ -1,0 +1,21 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "Example by Web App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "HMTL",
+    "Javascript",
+    "NODE",
+    "JS"
+  ],
+  "author": "Luis Alejandro Senseve Gomez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "pg-promise": "^11.9.1"
+  }
+}
