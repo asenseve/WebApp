@@ -46,5 +46,27 @@ app.post("/GuardarTipo", (req, res) => {
             res.send({ "Success" : false, "Mensaje" : error.message } );    
         });    
     } else {
+        var sql ='UPDATE Tipo SET Nombre=$1, Descripcion=$2 WHERE idtipo=$3';
+        var params = [data.nombre, data.descripcion, data.idtipo];
+        db.none(sql, params).then( function() {
+            res.type('json');
+            res.send({ "Success" : true } );    
+        }).catch(function(error){
+            res.type('json');
+            res.send({ "Success" : false, "Mensaje" : error.message } );    
+        });                
     }
+});
+
+app.post("/EliminarTipo", (req, res) => {
+    var data = { idtipo: req.body.idtipo }
+    var sql ='DELETE FROM Tipo WHERE idTipo=$1'
+    var params =[data.idtipo];
+    db.none(sql, params).then(function() {
+        res.type('json');
+        res.send({ "Success" : true } );
+    }).catch(function (error) {
+        res.type('json');
+        res.send({ "Success" : false, "Mensaje" : error.message } );
+    });                
 });
