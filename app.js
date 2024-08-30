@@ -17,6 +17,8 @@ app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname,'index.html'));
 });
 
+// Endponints para Tipo
+
 app.get('/tipo', (req, res) => {
     res.sendFile(path.resolve(__dirname,'tipo.html'));
 });
@@ -70,3 +72,26 @@ app.post("/EliminarTipo", (req, res) => {
         res.send({ "Success" : false, "Mensaje" : error.message } );
     });                
 });
+
+// Endpoints para Producto
+
+app.get('/producto', (req, res) => {
+    res.sendFile(path.resolve(__dirname,'producto.html'));
+});
+
+app.get('/obtenerProductos', (req, res) => {
+    var qProd = "SELECT p.*,t.nombre tipo FROM producto p, tipo t WHERE p.idtipo=t.idtipo ORDER BY 1";
+    var qTipo = "SELECT * FROM tipo ORDER BY 1";
+    db.any(qProd).then(function (productos) {
+        db.any(qTipo).then(function (tipos) {
+            res.type('json');
+            res.send({ "Success" : true, "Data" : { "Productos" : productos, "Tipos" : tipos } } );
+        }).catch(function (error) {
+            res.type('json');
+            res.send({ "Success" : false, "Mensaje" : error.message } );
+        });
+    }).catch(function (error) {
+        res.type('json');
+        res.send({ "Success" : false, "Mensaje" : error.message } );
+    });    
+}); 
