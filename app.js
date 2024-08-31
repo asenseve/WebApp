@@ -95,3 +95,46 @@ app.get('/obtenerProductos', (req, res) => {
         res.send({ "Success" : false, "Mensaje" : error.message } );
     });    
 }); 
+
+app.post("/GuardarProducto", (req, res) => {
+    var data = { idproducto: req.body.idproducto, nombre: req.body.nombre, 
+        descripcion: req.body.descripcion, precio: req.body.precio, 
+        cantidad: req.body.cantidad, idtipo: req.body.idtipo };
+    if (data.idproducto == 0)    
+    {
+        var sql ='INSERT INTO Producto(Nombre, Descripcion, Precio, Cantidad, idTipo) ' +
+            ' VALUES($1,$2,$3,$4,$5) RETURNING idProducto';
+        var params = [data.nombre, data.descripcion, data.precio, data.cantidad, data.idtipo];
+        db.one(sql, params).then( data => {
+            res.type('json');
+            res.send({ "Success" : true, "Data" : data.idproducto } );    
+        }).catch(function(error){
+            res.type('json');
+            res.send({ "Success" : false, "Mensaje" : error.message } );    
+        });    
+    } else {
+        var sql ='UPDATE Producto SET Nombre=$1, Descripcion=$2, Precio=$3, Cantidad=$4, ' +
+         ' idTipo=$5 WHERE idproducto=$6';
+        var params = [data.nombre, data.descripcion, data.precio, data.cantidad, data.idtipo, data.idproducto];
+        db.none(sql, params).then( function() {
+            res.type('json');
+            res.send({ "Success" : true } );    
+        }).catch(function(error){
+            res.type('json');
+            res.send({ "Success" : false, "Mensaje" : error.message } );    
+        });
+    }
+});
+
+app.post("/EliminarProducto", (req, res) => {
+    var data = { idproducto: req.body.idproducto }
+    var sql ='DELETE FROM Producto WHERE idProducto=$1'
+    var params =[data.idproducto];
+    db.none(sql, params).then(function() {
+        res.type('json');
+        res.send({ "Success" : true } );
+    }).catch(function (error) {
+        res.type('json');
+        res.send({ "Success" : false, "Mensaje" : error.message } );
+    });                
+});
