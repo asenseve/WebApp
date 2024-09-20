@@ -11,7 +11,7 @@ function eliminarExitoso(resultado, e, elemento) {
     }
 }
 function confirmarEliminar(e, elemento) {
-    var url = "/EliminarTipo";
+    var url = "tipo/EliminarTipo";
     var tipo = 'POST';
     var datos = { idtipo: elemento.idtipo };
     var tipoDatos = 'JSON';
@@ -72,7 +72,7 @@ function guardarTipoExitoso(respuesta, elemento) {
     }    
 }
 function guardarTipo(idTipo, elemento) {
-    var url = "/GuardarTipo";
+    var url = "tipo/GuardarTipo";
     var tipo = 'POST';
     var datos = {
         idtipo: idTipo,
@@ -123,7 +123,7 @@ function getTiposExitoso(resultado) {
     }
 }
 function init() {
-    var url = "/obtenerTipos";
+    var url = "tipo/obtenerTipos";
     var tipo = 'GET';
     var datos = {};
     var tipoDatos = 'JSON';
