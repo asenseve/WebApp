@@ -4,7 +4,7 @@ const path = require('path');
 var pgp = require("pg-promise")();
 var bodyParser = require("body-parser");
 var db = pgp("postgres://postgres:Senale@localhost:5432/dbDES");
-const port = 2266;
+const port = 3100;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/public', express.static(__dirname + '/public'));

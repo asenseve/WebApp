@@ -104,7 +104,13 @@ function editarDatos(elemento) {
     $("#txtDireccion").val(elemento.direccion);
     $("#txtTelefono").val(elemento.telefono);
     $("#txtCorreo").val(elemento.correo);
-    $("#txtFecNac").val(elemento.fechanacimiento.substring(0,10));
+    var date1 = (new Date(elemento.fechanacimiento));
+    //var fecArr = elemento.fechanacimiento.split('/');
+    //var fecNac = fecArr[2] + '-' + fecArr[0] + '-' + fecArr[1];    
+    // 'aaaa-mm-dd'
+    //$("#txtFecNac").val(fecNac);
+    //$("#txtFecNac").prop('valueAsDate',date1);
+    document.getElementById("txtFecNac").valueAsDate = date1;
     $("#btnEditar").show();
     $("#btnGuardar").hide();
 }
@@ -136,7 +142,13 @@ function mostrarDatosClientes() {
         fila.append(col(elemento.direccion));
         fila.append(col(elemento.telefono));
         fila.append(col(elemento.correo));
-        fila.append(col(elemento.fechanacimiento.substring(0,10)));
+        //if(elemento.fechanacimiento.includes('-'))
+        //{
+            //var fecArr = elemento.fechanacimiento.substring(0,10).split('-');
+            //elemento.fechanacimiento = fecArr[1] + '/' + fecArr[2] + '/' + fecArr[0];    
+        //}
+        elemento.fechanacimiento = (new Date(elemento.fechanacimiento)).toLocaleDateString();        
+        fila.append(col(elemento.fechanacimiento));
         fila.append(col(AccionColumna(function (e) { mostrarEliminarCliente(e, elemento) }
             , 'trash', 'Eliminar')).addClass("alinearCentro"));
         $('#tblCliente tbody').append(fila);
