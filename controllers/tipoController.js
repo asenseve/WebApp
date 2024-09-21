@@ -1,13 +1,13 @@
 const path = require('path');
-var pgp = require("pg-promise")();
-var db = pgp("postgres://postgres:Senale@localhost:5432/dbDES");
+const tipoModel = require('../models/tipoModel');
+const objTipoModel = new tipoModel();
 
 module.exports = {
     get : (req, res) => {
         res.sendFile(path.resolve(__dirname,'../views/tipo.html'));
     },
     obtenerTipos : (req, res) => {
-        db.any("SELECT * FROM tipo ORDER BY 1").then(function (data) {
+        objTipoModel.obtenerTipos().then(function (data) {
             res.type('json');
             res.send({ "Success" : true, "Data" : data } );
         }).catch(function (error) {
@@ -20,9 +20,7 @@ module.exports = {
             descripcion: req.body.descripcion };
         if (data.idtipo == 0)    
         {
-            var sql ='INSERT INTO Tipo(Nombre, Descripcion) VALUES($1,$2) RETURNING idTipo';
-            var params = [data.nombre, data.descripcion];
-            db.one(sql, params).then( data => {
+            objTipoModel.guardarTipo(data).then(data => {
                 res.type('json');
                 res.send({ "Success" : true, "Data" : data.idtipo } );    
             }).catch(function(error){
@@ -30,9 +28,7 @@ module.exports = {
                 res.send({ "Success" : false, "Mensaje" : error.message } );    
             });    
         } else {
-            var sql ='UPDATE Tipo SET Nombre=$1, Descripcion=$2 WHERE idtipo=$3';
-            var params = [data.nombre, data.descripcion, data.idtipo];
-            db.none(sql, params).then( function() {
+            objTipoModel.modificarTipo(data).then( function() {
                 res.type('json');
                 res.send({ "Success" : true } );    
             }).catch(function(error){
@@ -43,9 +39,7 @@ module.exports = {
     },    
     EliminarTipo : (req, res) => {
         var data = { idtipo: req.body.idtipo }
-        var sql ='DELETE FROM Tipo WHERE idTipo=$1'
-        var params =[data.idtipo];
-        db.none(sql, params).then(function() {
+        objTipoModel.eliminarTipo(data).then(function() {
             res.type('json');
             res.send({ "Success" : true } );
         }).catch(function (error) {
