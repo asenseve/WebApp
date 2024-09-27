@@ -12,7 +12,7 @@ function eliminarExitoso(resultado, e, elemento) {
     }
 }
 function confirmarEliminar(e, elemento) {
-    var url = "/EliminarProducto";
+    var url = "producto/EliminarProducto";
     var tipo = 'POST';
     var datos = { idproducto: elemento.idproducto };
     var tipoDatos = 'JSON';
@@ -60,7 +60,7 @@ function guardarProductoExitoso(respuesta, elemento) {
     }    
 }
 function guardarProducto(idProducto, elemento) {
-    var url = "/GuardarProducto";
+    var url = "producto/GuardarProducto";
     var tipo = 'POST';
     var datos = {
         idproducto: idProducto,
@@ -148,7 +148,7 @@ function getProductosExitoso(resultado) {
     }
 }
 function init() {
-    var url = "/obtenerProductos";
+    var url = "producto/obtenerProductos";
     var tipo = 'GET';
     var datos = {};
     var tipoDatos = 'JSON';

@@ -2,85 +2,21 @@ const express = require('express');
 const app = express();
 const indexRoute = require('./routes/indexRoute');
 const tipoRoute = require('./routes/tipoRoute');
+const productoRoute = require('./routes/productoRoute');
 var bodyParser = require("body-parser");
-const port = 3100;
+const port = 2266;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/public', express.static(__dirname + '/public'));
 app.use('/', indexRoute);
 app.use('/tipo', tipoRoute);
+app.use('/producto', productoRoute);
 
 app.listen(port, () => {
     console.log(`Escuchando en: http://localhost:${port}`);  
 });
 
 /*
-// Endpoints para Producto
-
-app.get('/producto', (req, res) => {
-    res.sendFile(path.resolve(__dirname,'views/producto.html'));
-});
-
-app.get('/obtenerProductos', (req, res) => {
-    var qProd = "SELECT p.*,t.nombre tipo FROM producto p, tipo t WHERE p.idtipo=t.idtipo ORDER BY 1";
-    var qTipo = "SELECT * FROM tipo ORDER BY 1";
-    db.any(qProd).then(function (productos) {
-        db.any(qTipo).then(function (tipos) {
-            res.type('json');
-            res.send({ "Success" : true, "Data" : { "Productos" : productos, "Tipos" : tipos } } );
-        }).catch(function (error) {
-            res.type('json');
-            res.send({ "Success" : false, "Mensaje" : error.message } );
-        });
-    }).catch(function (error) {
-        res.type('json');
-        res.send({ "Success" : false, "Mensaje" : error.message } );
-    });    
-}); 
-
-app.post("/GuardarProducto", (req, res) => {
-    var data = { idproducto: req.body.idproducto, nombre: req.body.nombre, 
-        descripcion: req.body.descripcion, precio: req.body.precio, 
-        cantidad: req.body.cantidad, idtipo: req.body.idtipo };
-    if (data.idproducto == 0)    
-    {
-        var sql ='INSERT INTO Producto(Nombre, Descripcion, Precio, Cantidad, idTipo) ' +
-            ' VALUES($1,$2,$3,$4,$5) RETURNING idProducto';
-        var params = [data.nombre, data.descripcion, data.precio, data.cantidad, data.idtipo];
-        db.one(sql, params).then( data => {
-            res.type('json');
-            res.send({ "Success" : true, "Data" : data.idproducto } );    
-        }).catch(function(error){
-            res.type('json');
-            res.send({ "Success" : false, "Mensaje" : error.message } );    
-        });    
-    } else {
-        var sql ='UPDATE Producto SET Nombre=$1, Descripcion=$2, Precio=$3, Cantidad=$4, ' +
-         ' idTipo=$5 WHERE idproducto=$6';
-        var params = [data.nombre, data.descripcion, data.precio, data.cantidad, data.idtipo, data.idproducto];
-        db.none(sql, params).then( function() {
-            res.type('json');
-            res.send({ "Success" : true } );    
-        }).catch(function(error){
-            res.type('json');
-            res.send({ "Success" : false, "Mensaje" : error.message } );    
-        });
-    }
-});
-
-app.post("/EliminarProducto", (req, res) => {
-    var data = { idproducto: req.body.idproducto }
-    var sql ='DELETE FROM Producto WHERE idProducto=$1'
-    var params =[data.idproducto];
-    db.none(sql, params).then(function() {
-        res.type('json');
-        res.send({ "Success" : true } );
-    }).catch(function (error) {
-        res.type('json');
-        res.send({ "Success" : false, "Mensaje" : error.message } );
-    });                
-});
-
 // Endpoints para cliente
 
 app.get('/cliente', (req, res) => {
