@@ -11,7 +11,7 @@ function eliminarExitoso(resultado, e, elemento) {
     }
 }
 function confirmarEliminar(e, elemento) {
-    var url = "/EliminarCliente";
+    var url = "cliente/EliminarCliente";
     var tipo = 'POST';
     var datos = { idcliente: elemento.idcliente };
     var tipoDatos = 'JSON';
@@ -61,7 +61,7 @@ function guardarClienteExitoso(respuesta, elemento) {
     }    
 }
 function guardarCliente(idcliente, elemento) {
-    var url = "/GuardarCliente";
+    var url = "cliente/GuardarCliente";
     var tipo = 'POST';
     var datos = {
         idcliente: idcliente,
@@ -164,7 +164,7 @@ function getClientesExitoso(resultado) {
     }
 }
 function init() {
-    var url = "/obtenerClientes";
+    var url = "cliente/obtenerClientes";
     var tipo = 'GET';
     var datos = {};
     var tipoDatos = 'JSON';
