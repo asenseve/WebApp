@@ -3,9 +3,6 @@ const clienteModel = require('../models/clienteModel');
 const objClienteModel = new clienteModel();
 
 module.exports = {
-    get : (req, res) => {
-        res.sendFile(path.resolve(__dirname,'../views/cliente.html'));
-    },
     obtenerClientes : (req, res) => {
         objClienteModel.obtenerClientes().then(function (data) {
             res.type('json');

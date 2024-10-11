@@ -3,9 +3,6 @@ const tipoModel = require('../models/tipoModel');
 const objTipoModel = new tipoModel();
 
 module.exports = {
-    get : (req, res) => {
-        res.sendFile(path.resolve(__dirname,'../views/tipo.html'));
-    },
     obtenerTipos : (req, res) => {
         objTipoModel.obtenerTipos().then(function (data) {
             res.type('json');

@@ -1,3 +1,6 @@
+function getUrlBackend() {
+    return "http://localhost:2266/";
+}
 function adicionarOpcionesCombo(elemento, items, evento, prop) {
     prop = prop || { id: 'id', value: 'value' };
     $.each(items, function (index, item) {
@@ -40,7 +43,7 @@ function solicitudAjax(solicitudUrl, onSuccess, data, tipoDato, tipo) {
         type: tipo,
         datatype: tipoDato,
         traditional: false,
-        url: solicitudUrl,
+        url: getUrlBackend() + solicitudUrl,
         data: data,
         success: function (responseText) {
             if (onSuccess)

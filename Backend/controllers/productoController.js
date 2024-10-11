@@ -5,9 +5,6 @@ const objProductoModel = new productoModel();
 const objTipoModel = new tipoModel();
 
 module.exports = {
-    get : (req, res) => {
-        res.sendFile(path.resolve(__dirname,'../views/producto.html'));
-    },
     obtenerProductos : (req, res) => {
         objProductoModel.obtenerProductos().then(function (productos) {
             objTipoModel.obtenerTipos().then( function (tipos) {
