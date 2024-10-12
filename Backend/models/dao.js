@@ -15,6 +15,17 @@ class dao {
         let data = await db.none(sql, params);
         return data;
     }
+    async maestro_detalle(sqlm, sqld, parm = [], list_pard = [], nombreid, posid) {
+        let data = await db.tx(async t => {
+                const id = await t.one(sqlm, parm, a => + a[nombreid]);
+                for(const pard of list_pard) { 
+                    pard[posid] = id;
+                    await t.none(sqld, pard);
+                };
+                return id;
+            });
+        return data;    
+    }
 }
 
 module.exports = dao;

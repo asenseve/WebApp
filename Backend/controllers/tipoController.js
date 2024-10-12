@@ -1,4 +1,3 @@
-const path = require('path');
 const tipoModel = require('../models/tipoModel');
 const objTipoModel = new tipoModel();
 
