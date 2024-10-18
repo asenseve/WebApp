@@ -5,7 +5,7 @@ const productoRoute = require('./routes/productoRoute');
 const clienteRoute = require('./routes/clienteRoute');
 const notaRoute = require('./routes/notaRoute');
 const cors = require('cors');
-const port = 2266;
+const port = 2288;
 var bodyParser = require("body-parser");
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));

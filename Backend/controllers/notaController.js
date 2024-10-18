@@ -2,6 +2,15 @@ const notaModel = require('../models/notaModel');
 const objNotaModel = new notaModel();
 
 module.exports = {
+    obtenerNotas: (req, res) => {
+        objNotaModel.obtenerNotas().then(function (data) {
+            res.type('json');
+            res.send({ "Success" : true, "Data" : data } );
+        }).catch(function (error) {
+            res.type('json');
+            res.send({ "Success" : false, "Mensaje" : error.message } );
+        });
+    },        
     GuardarNota : (req, res) => {
         var dataM = { idnotaventa: 0, fecha: '12/04/2024', descripcion: 'Venta de Prueba', 
             idcliente:1, total: 79 };
