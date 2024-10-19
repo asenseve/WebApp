@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota de Venta</title>
+    <link rel="stylesheet" href="../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../public/css/Site.css">
+    <link rel="stylesheet" href="../public/css/toastr.css">
+    <script src="../public/js/jquery-3.7.1.js"></script>
+    <script src="../public/js/bootstrap.js"></script>   
+    <script src="../public/js/toastr.js"></script> 
+    <script src="../public/js/utiles.js"></script>
+    <script src="../public/js/notaVenta.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Aplicacion Web</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="tipo.html">Tipo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="producto.html">Producto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cliente.html">Cliente</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="nota.html">Notas</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+      <main class="container">
+        <h2>
+            Nota de Venta
+            <a id="btnVolver" href="#" class="btn btn-link"
+                style="float: right;" >Cancelar</a>
+            <button id="btnGuardarNota" style="float: right;" 
+                class="btn btn-primary" title="Guardar Nota"> Guardar Nota </button>
+        </h2>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2"> <b>Nro :</b> </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <input type="text" readonly id="txtNro" value="0">
+            </div>       
+            <div class="col-lg-1 col-md-1 col-sm-1"></div>         
+            <div class="col-lg-2 col-md-2 col-sm-2"> <b>Fecha :</b> </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <input type="date" id="txtFecha">
+            </div>            
+        </div>
+        <div class="row">            
+            <div class="col-lg-2 col-md-2 col-sm-2"> <b>Descipcion :</b> </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <input style="width: 95%;" type="text" id="txtDescripcion">
+            </div>   
+            <div class="col-lg-1 col-md-1 col-sm-1"></div>         
+            <div class="col-lg-2 col-md-2 col-sm-2"> <b>Cliente :</b> </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <select name="cmbCliente" id="cmbCliente"></select>
+            </div>            
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-md-12">
+              <button id="btnAgregar" style="float: right;" 
+                class="btn btn-outline-primary" title="Agregar">Agregar
+              </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <table id="tblDetalle" class="table table-hover table-bordered">
+                    <colgroup>
+                        <col style="width: 10%"> <col style="width: 20%">
+                        <col style="width: 20%"> <col style="width: 20%">
+                        <col style="width: 20%"> <col style="width: 10%">
+                    </colgroup>  
+                    <thead>
+                        <tr>
+                          <th>Nro</th> <th>Articulo</th>                        
+                          <th>Precio</th> <th>Cantidad</th>
+                          <th>Subtotal</th> <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>                     
+                </table>
+            </div>
+        </div>  
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-md-12">
+                <div style="width: 90%; text-align: right;">
+                    <b>Total :</b>
+                    <input style="text-align: right;" type="text" 
+                        readonly id="txtTotal" value="0">
+                </div>
+                <div style="width: 10%;"></div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="agregarDetalle" tabindex="-1" role="dialog">
+            <div style="min-width: 700px!important;" class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <label for="cmbProducto">Producto</label> <br>
+                                <select style="width: 100%;" name="cmbProducto"" id="cmbProducto"></select>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                <label for="txtPrecio">Precio</label>
+                                <input style="text-align: right;" id="txtPrecio" readonly type="text" class="form-control" maxlength="15">
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                <label for="txtCantidad">Cantidad</label>
+                                <input style="text-align: right;" id="txtCantidad" type="text" class="form-control" maxlength="15">
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                <label for="txtSubtotal">Subtotal</label>
+                                <input style="text-align: right;" id="txtSubtotal" readonly type="text" class="form-control" maxlength="15">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" id="btnGuardar">Guardar</button>
+                        <button style="display: none;" class="btn btn-primary" 
+                           id="btnEditar">Guardar</button>
+                        <a id="btnCancelar" href="#" class="btn btn-link" 
+                           data-dismiss="modal">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </main>    
+</body>
+</html>

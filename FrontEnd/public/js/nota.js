@@ -32,6 +32,10 @@ function init() {
     var tipoDatos = 'JSON';
     solicitudAjax(url, getNotasExitoso, datos, tipoDatos, tipo);
 }
+function crearNotaVenta() {
+    window.location.href = "notaVenta.html";    
+}
 $(document).ready(function () {
     init();  
+    $('#btnAdicionar').click(function () { crearNotaVenta(); });  
 });

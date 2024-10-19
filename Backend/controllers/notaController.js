@@ -1,5 +1,9 @@
 const notaModel = require('../models/notaModel');
 const objNotaModel = new notaModel();
+const clienteModel = require('../models/clienteModel');
+const productoModel = require('../models/productoModel');
+const objClienteModel = new clienteModel();
+const objProductoModel = new productoModel();
 
 module.exports = {
     obtenerNotas: (req, res) => {
@@ -10,7 +14,23 @@ module.exports = {
             res.type('json');
             res.send({ "Success" : false, "Mensaje" : error.message } );
         });
-    },        
+    },
+    obtenerClientesProductos: (req, res) => { 
+        objProductoModel.obtenerProductos().then(function(productos){
+            objClienteModel.obtenerClientes().then(function (clientes) {
+                res.type('json');
+                res.send({ "Success" : true, "Data" : { "Productos" : productos, 
+                "Clientes" : clientes } } );
+                })
+            .catch(function (error) {
+                res.type('json');
+                res.send({ "Success" : false, "Mensaje" : error.message } );
+            });                    
+        }).catch(function (error) {
+            res.type('json');
+            res.send({ "Success" : false, "Mensaje" : error.message } );
+        });
+    },                
     GuardarNota : (req, res) => {
         var dataM = { idnotaventa: 0, fecha: '12/04/2024', descripcion: 'Venta de Prueba', 
             idcliente:1, total: 79 };
