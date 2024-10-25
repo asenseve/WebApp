@@ -1,10 +1,93 @@
 var _datosProductos;
 var _datosClientes;
+var _datosDetalle = [];
+function confirmarEliminar(e, detalle, producto) {
+    $("#eliminarDetalle").modal("hide");
+    $(e.currentTarget).closest('tr').remove();
+    _datosDetalle.remove(detalle);
+    toastr.success("El producto'" + producto + " '   se ha eliminado satisfactoriamente");
+    var x = Number.parseFloat($("#txtTotal").val()) 
+        - Number.parseFloat(detalle.subtotal);
+    $("#txtTotal").val(x);    
+
+}
+function mostrarEliminarProducto(e, detalle, producto) {
+    var modal = '#eliminarDetalle';
+    $(modal).find(".modal-title").html('Eliminar Producto');
+    $(modal).find(".text-mensaje-modal").html('Esta seguro que desea eliminar el Producto '
+        + "'" + producto + "'    ?");
+    $(modal).find(".modal-body").css({ 'min-height': 100 + "px" });    
+    $(modal).modal({ backdrop: 'static', keyboard: false });
+    $(modal).modal("show");
+    $("#btnConfirmarEliminar").unbind('click').click(function () {
+        confirmarEliminar(e, detalle, producto);
+    });    
+}
+function guardarNotaVentaExitoso(respuesta, elemento){
+    if (respuesta.Success) {
+        toastr.success("La nota de venta se ha guardado satisfactoriamente ");
+        window.location.href = "nota.html";
+    } else {
+        toastr.error(respuesta.Mensaje);
+    }    
+}
+function GuardarNotaVenta(idnotaventa, elemento) {
+    var url = "nota/GuardarNota";
+    var tipo = 'POST';
+    var datos = {
+        idnotaventa: idnotaventa,
+        fecha: $("#txtFecha").val(),
+        total: $("#txtTotal").val(),
+        idcliente: $("#cmbCliente").val(),
+        descripcion: $("#txtDescripcion").val(),
+        detalle: _datosDetalle
+    };
+    var tipoDatos = 'JSON';
+    solicitudAjax(url, function (response) { guardarNotaVentaExitoso(response, elemento); }
+        , datos, tipoDatos, tipo);
+}
+function agregarDetalle() {
+    var detalle = {
+        idproducto: $("#cmbProducto").val(),
+        cantidad: $("#txtCantidad").val(),
+        precio: $("#txtPrecio").val(),
+        subtotal: $("#txtSubtotal").val(),
+    };
+    _datosDetalle.push(detalle);    
+    var fila = $('<tr>').attr('id', detalle.idproducto);
+    fila.append(col(detalle.idproducto).addClass("alinearCentro"));
+    var input = crearSpan("lblEdit" + detalle.idproducto, "spanHyperLink", 
+        $("#cmbProducto option:selected").html());
+    //eventoActualizarDetalle(input, elemento);
+    fila.append(col(input));
+    fila.append(col(detalle.precio).addClass("alinearDerecha"));
+    fila.append(col(detalle.cantidad).addClass("alinearDerecha"));
+    fila.append(col(detalle.subtotal).addClass("alinearDerecha"));
+    fila.append(col(AccionColumna(function (e) { mostrarEliminarProducto(e, detalle, 
+        $("#cmbProducto option:selected").html()) } , 'trash', 'Eliminar')).addClass("alinearCentro"));
+    $('#tblDetalle tbody').append(fila);
+    var x = Number.parseFloat($("#txtTotal").val()) 
+        + Number.parseFloat(detalle.subtotal);
+    $("#txtTotal").val(x);    
+}
+function calcularSubtotal() {
+    var precio = $("#txtPrecio").val() * $("#txtCantidad").val();
+    $("#txtSubtotal").val(precio)
+}
+function cargarPrecio() {
+    $.each(_datosProductos, function (index, elemento) {
+        if (elemento.idproducto == $("#cmbProducto").val()) {
+            $("#txtPrecio").val(elemento.precio);            
+        }
+    });    
+    calcularSubtotal();
+}
 function cargarCombos() {
     var propC = { id: 'idcliente', value: 'apellidos' };
     adicionarOpcionesCombo($("#cmbCliente"), _datosClientes, null, propC);    
     var propP = { id: 'idproducto', value: 'nombre' };
-    adicionarOpcionesCombo($("#cmbProducto"), _datosProductos, null, propP);
+    adicionarOpcionesCombo($("#cmbProducto"), _datosProductos, cargarPrecio, propP);
+    cargarPrecio();
 }
 function getCargarExitoso(resultado) {
     if (resultado.Success) {
@@ -18,7 +101,6 @@ function getCargarExitoso(resultado) {
 }
 function limpiarDatos() {
     $("#txtCantidad").val("1");
-    $("#txtSubtotal").val("0");
 }
 function mostrarModalDetalle() {
     limpiarDatos();
@@ -38,8 +120,12 @@ function init() {
     solicitudAjax(url, getCargarExitoso, datos, tipoDatos, tipo);
 }
 $(document).ready(function () {
+    $("#txtCantidad").val("1");
     init();      
     $('#btnVolver').click(function () { window.location.href = "nota.html"; });    
     $('#btnAgregar').click(function () { mostrarModalDetalle(); });  
     $('#btnCancelar').click(function () { $('#agregarDetalle').modal("hide"); }); 
+    $('#btnGuardar').click(function () { agregarDetalle(); });   
+    $('#btnGuardarNota').click(function () { GuardarNotaVenta($("#txtNro").val()); });
+    $('#btnCancelarEliminar').click(function () { $("#eliminarDetalle").modal("hide"); });
 });

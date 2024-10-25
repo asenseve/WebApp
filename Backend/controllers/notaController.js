@@ -32,15 +32,19 @@ module.exports = {
         });
     },                
     GuardarNota : (req, res) => {
-        var dataM = { idnotaventa: 0, fecha: '12/04/2024', descripcion: 'Venta de Prueba', 
-            idcliente:1, total: 79 };
-        var list_dataD = [];
-        var dataD1 = {idproducto:1, cantidad:5, precio:10, subtotal:50};
-        var dataD2 = {idproducto:3, cantidad:3, precio:3, subtotal:9};
-        var dataD3 = {idproducto:5, cantidad:4, precio:5, subtotal:20};
-        list_dataD.push(dataD1);
-        list_dataD.push(dataD2);
-        list_dataD.push(dataD3);
+        var dataM = { idnotaventa: req.body.idnotaventa, fecha: req.body.fecha, 
+            descripcion: req.body.descripcion, idcliente: req.body.idcliente, 
+            total: req.body.total };
+        //var dataM = { idnotaventa: 0, fecha: '12/04/2024', descripcion: 'Venta de Prueba', 
+        //    idcliente:1, total: 79 };
+        var list_dataD = req.body.detalle;
+        //var list_dataD = [];
+        //var dataD1 = {idproducto:1, cantidad:5, precio:10, subtotal:50};
+        //var dataD2 = {idproducto:3, cantidad:3, precio:3, subtotal:9};
+        //var dataD3 = {idproducto:5, cantidad:4, precio:5, subtotal:20};
+        //list_dataD.push(dataD1);
+        //list_dataD.push(dataD2);
+        //list_dataD.push(dataD3);
         if (dataM.idnotaventa == 0)    
         {
             objNotaModel.guardarNota(dataM,list_dataD).then(data => {

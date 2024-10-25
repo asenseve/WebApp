@@ -127,7 +127,7 @@
                             </div>
                             <div class="col-lg-2 col-md-2 col-sm-2">
                                 <label for="txtCantidad">Cantidad</label>
-                                <input style="text-align: right;" id="txtCantidad" type="text" class="form-control" maxlength="15">
+                                <input style="text-align: right;" id="txtCantidad" type="text" class="form-control" maxlength="15" onchange="calcularSubtotal()">
                             </div>
                             <div class="col-lg-2 col-md-2 col-sm-2">
                                 <label for="txtSubtotal">Subtotal</label>
@@ -141,6 +141,25 @@
                            id="btnEditar">Guardar</button>
                         <a id="btnCancelar" href="#" class="btn btn-link" 
                            data-dismiss="modal">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        
+        <div class="modal fade" id="eliminarDetalle" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-mensaje-modal">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" id="btnConfirmarEliminar">Aceptar</button>
+                        <a id="btnCancelarEliminar" class="btn btn-link" href="#"
+                          data-dismiss="modal">Cancelar</a>
                     </div>
                 </div>
             </div>
