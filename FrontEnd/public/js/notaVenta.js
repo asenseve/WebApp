@@ -46,6 +46,41 @@ function GuardarNotaVenta(idnotaventa, elemento) {
     solicitudAjax(url, function (response) { guardarNotaVentaExitoso(response, elemento); }
         , datos, tipoDatos, tipo);
 }
+function editarDatos(elemento) {    
+    $("#cmbProducto").val(elemento.idproducto);
+    $("#cmbProducto").prop('disabled', true);
+    $("#txtCantidad").val(elemento.cantidad);
+    $("#txtPrecio").val(elemento.precio);
+    $("#txtSubtotal").val(elemento.subtotal);
+    $("#btnEditar").show();
+    $("#btnGuardar").hide();
+}
+function modificarDetalle(input, elemento) {
+    var x = Number.parseFloat($("#txtTotal").val()) 
+        - Number.parseFloat(elemento.subtotal);    
+    elemento.cantidad = $("#txtCantidad").val();
+    elemento.subtotal = $("#txtSubtotal").val();
+    x = x + Number.parseFloat(elemento.subtotal);
+    $("#txtTotal").val(x);
+    var tds = $(input).closest('tr').find('td');
+    tds[3].innerHTML = elemento.cantidad;
+    tds[4].innerHTML = elemento.subtotal;
+    $("#agregarDetalle").modal("hide");    
+}
+function eventoActualizarDetalle(input, elemento) {
+    $(input).unbind('click').click(function () {
+        var modal = '#agregarDetalle';
+        editarDatos(elemento);
+        $(modal).find(".modal-title").html('Editar Detalle ');
+        $(modal).find(".modal-dialog").css({ 'width': 700 + "px" });
+        $(modal).modal({ backdrop: 'static', keyboard: false });
+        $(modal).modal("show");
+        $("#btnEditar").unbind('click').click(function (event) {
+            event.preventDefault();
+            modificarDetalle(input, elemento);
+        });
+    });
+}
 function agregarDetalle() {
     var detalle = {
         idproducto: $("#cmbProducto").val(),
@@ -58,7 +93,7 @@ function agregarDetalle() {
     fila.append(col(detalle.idproducto).addClass("alinearCentro"));
     var input = crearSpan("lblEdit" + detalle.idproducto, "spanHyperLink", 
         $("#cmbProducto option:selected").html());
-    //eventoActualizarDetalle(input, elemento);
+    eventoActualizarDetalle(input, detalle);
     fila.append(col(input));
     fila.append(col(detalle.precio).addClass("alinearDerecha"));
     fila.append(col(detalle.cantidad).addClass("alinearDerecha"));
@@ -101,6 +136,9 @@ function getCargarExitoso(resultado) {
 }
 function limpiarDatos() {
     $("#txtCantidad").val("1");
+    $("#cmbProducto").prop('disabled', false);
+    $("#btnEditar").hide();
+    $("#btnGuardar").show();
 }
 function mostrarModalDetalle() {
     limpiarDatos();

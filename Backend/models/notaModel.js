@@ -7,6 +7,16 @@ class notaModel {
         var sql = `select n.*, c.nombres || ' ' || c.apellidos cliente 
              from nota_venta n inner join cliente c on n.idcliente=c.idcliente`;
         return objDao.consultar(sql);
+    }
+    obtenerNota(idNotaVenta) {
+        var sql = `select * from nota_venta WHERE idnotaventa=$1`;
+        var parms = [idNotaVenta];
+        return objDao.consultar(sql, parms);
+    }
+    obtenerDetalleNota(idNotaVenta) {
+        var sql = `select * from detalle_venta WHERE idnotaventa=$1`;
+        var parms = [idNotaVenta];
+        return objDao.consultar(sql, parms);
     }    
     guardarNota(dataM, list_dataD) {
         var sqlm =`INSERT INTO nota_venta(fecha, descripcion, idcliente, total) 

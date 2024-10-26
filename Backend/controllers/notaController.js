@@ -15,14 +15,28 @@ module.exports = {
             res.send({ "Success" : false, "Mensaje" : error.message } );
         });
     },
+    obtenerNota: async (req, res) => {
+        try {
+            var idnotaventa = req.body.idnotaventa;        
+            let nota = await objNotaModel.obtenerNota(idnotaventa);
+            let detalle = await objNotaModel.obtenerDetalleNota(idnotaventa);
+            let productos = await objProductoModel.obtenerProductos();
+            let clientes = await objClienteModel.obtenerClientes();
+            res.type('json');
+            res.send({ "Success" : true, "Data" : { "Productos" : productos, 
+                "Clientes" : clientes, "Nota" : nota, "Detalle" : detalle } } );
+        } catch(error) {
+                res.type('json');
+                res.send({ "Success" : false, "Mensaje" : error.message } );
+        }
+    },
     obtenerClientesProductos: (req, res) => { 
         objProductoModel.obtenerProductos().then(function(productos){
             objClienteModel.obtenerClientes().then(function (clientes) {
                 res.type('json');
                 res.send({ "Success" : true, "Data" : { "Productos" : productos, 
                 "Clientes" : clientes } } );
-                })
-            .catch(function (error) {
+            }).catch(function (error) {
                 res.type('json');
                 res.send({ "Success" : false, "Mensaje" : error.message } );
             });                    
