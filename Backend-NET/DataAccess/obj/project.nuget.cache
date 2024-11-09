@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "0bteRGtpH7+9uJ4NIEvez/yUI8tpgqBz82t5SMP33igNW6St5YlX9d8cuaGVKF6LupswAndv1HsOARF9hOiEHw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\DataAccess\\DataAccess.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\asenseve\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\asenseve\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\asenseve\\.nuget\\packages\\npgsql\\8.0.5\\npgsql.8.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
