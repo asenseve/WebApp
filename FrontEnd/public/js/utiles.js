@@ -1,5 +1,5 @@
 function getUrlBackend() {
-    return "http://localhost:2288/";
+    return "https://localhost:7008/";
 }
 function adicionarOpcionesCombo(elemento, items, evento, prop) {
     prop = prop || { id: 'id', value: 'value' };

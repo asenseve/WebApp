@@ -3,32 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{15F73A4D-CFE4-4853-9733-4CD658459F05}|DataAccess\\DataAccess.csproj|c:\\users\\asenseve\\desktop\\des611\\webapp\\webapp\\backend-net\\dataaccess\\dtos\\tipodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15F73A4D-CFE4-4853-9733-4CD658459F05}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\dtos\\tipodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{53CD1FF6-384F-4A70-BA5C-21842FA8C254}|Backend-NET\\Backend-NET.csproj|c:\\users\\asenseve\\desktop\\des611\\webapp\\webapp\\backend-net\\backend-net\\controllers\\tipocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{53CD1FF6-384F-4A70-BA5C-21842FA8C254}|Backend-NET\\Backend-NET.csproj|solutionrelative:backend-net\\controllers\\tipocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15F73A4D-CFE4-4853-9733-4CD658459F05}|DataAccess\\DataAccess.csproj|c:\\users\\asenseve\\desktop\\des611\\webapp\\webapp\\backend-net\\dataaccess\\models\\tipomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F73A4D-CFE4-4853-9733-4CD658459F05}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\models\\tipomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{15F73A4D-CFE4-4853-9733-4CD658459F05}|DataAccess\\DataAccess.csproj|c:\\users\\asenseve\\desktop\\des611\\webapp\\webapp\\backend-net\\dataaccess\\dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15F73A4D-CFE4-4853-9733-4CD658459F05}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{15F73A4D-CFE4-4853-9733-4CD658459F05}|DataAccess\\DataAccess.csproj|c:\\users\\asenseve\\desktop\\des611\\webapp\\webapp\\backend-net\\dataaccess\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15F73A4D-CFE4-4853-9733-4CD658459F05}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53CD1FF6-384F-4A70-BA5C-21842FA8C254}|Backend-NET\\Backend-NET.csproj|c:\\users\\asenseve\\desktop\\des611\\webapp\\webapp\\backend-net\\backend-net\\controllers\\tipocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{53CD1FF6-384F-4A70-BA5C-21842FA8C254}|Backend-NET\\Backend-NET.csproj|solutionrelative:backend-net\\controllers\\tipocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{15F73A4D-CFE4-4853-9733-4CD658459F05}|DataAccess\\DataAccess.csproj|c:\\users\\asenseve\\desktop\\des611\\webapp\\webapp\\backend-net\\dataaccess\\dtos\\parameterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F73A4D-CFE4-4853-9733-4CD658459F05}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\dtos\\parameterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{53CD1FF6-384F-4A70-BA5C-21842FA8C254}|Backend-NET\\Backend-NET.csproj|c:\\users\\asenseve\\desktop\\des611\\webapp\\webapp\\backend-net\\backend-net\\dtos\\resultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{53CD1FF6-384F-4A70-BA5C-21842FA8C254}|Backend-NET\\Backend-NET.csproj|solutionrelative:backend-net\\dtos\\resultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{53CD1FF6-384F-4A70-BA5C-21842FA8C254}|Backend-NET\\Backend-NET.csproj|c:\\users\\asenseve\\desktop\\des611\\webapp\\webapp\\backend-net\\backend-net\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{53CD1FF6-384F-4A70-BA5C-21842FA8C254}|Backend-NET\\Backend-NET.csproj|solutionrelative:backend-net\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{53CD1FF6-384F-4A70-BA5C-21842FA8C254}|Backend-NET\\Backend-NET.csproj|c:\\users\\asenseve\\desktop\\des611\\webapp\\webapp\\backend-net\\backend-net\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{53CD1FF6-384F-4A70-BA5C-21842FA8C254}|Backend-NET\\Backend-NET.csproj|solutionrelative:backend-net\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{15F73A4D-CFE4-4853-9733-4CD658459F05}|DataAccess\\DataAccess.csproj|c:\\users\\asenseve\\desktop\\des611\\webapp\\webapp\\backend-net\\dataaccess\\dtos\\tipodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15F73A4D-CFE4-4853-9733-4CD658459F05}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\dtos\\tipodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53CD1FF6-384F-4A70-BA5C-21842FA8C254}|Backend-NET\\Backend-NET.csproj|c:\\users\\asenseve\\desktop\\des611\\webapp\\webapp\\backend-net\\backend-net\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{53CD1FF6-384F-4A70-BA5C-21842FA8C254}|Backend-NET\\Backend-NET.csproj|solutionrelative:backend-net\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "TipoDto.cs",
               "DocumentMoniker": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\DataAccess\\Dtos\\TipoDto.cs",
               "RelativeDocumentMoniker": "DataAccess\\Dtos\\TipoDto.cs",
@@ -51,43 +55,57 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T16:46:25.892Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ParameterDto.cs",
+              "DocumentMoniker": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\DataAccess\\Dtos\\ParameterDto.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Dtos\\ParameterDto.cs",
+              "ToolTip": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\DataAccess\\Dtos\\ParameterDto.cs",
+              "RelativeToolTip": "DataAccess\\Dtos\\ParameterDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T02:07:39.666Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "TipoModel.cs",
+              "DocumentMoniker": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\DataAccess\\Models\\TipoModel.cs",
+              "RelativeDocumentMoniker": "DataAccess\\Models\\TipoModel.cs",
+              "ToolTip": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\DataAccess\\Models\\TipoModel.cs",
+              "RelativeToolTip": "DataAccess\\Models\\TipoModel.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAwwCEAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T00:55:18.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "DAO.cs",
               "DocumentMoniker": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\DataAccess\\DAO.cs",
               "RelativeDocumentMoniker": "DataAccess\\DAO.cs",
               "ToolTip": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\DataAccess\\DAO.cs",
               "RelativeToolTip": "DataAccess\\DAO.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAiwAkAAAARAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAYwBgAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T16:32:27.299Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\DataAccess\\Class1.cs",
-              "RelativeDocumentMoniker": "DataAccess\\Class1.cs",
-              "ToolTip": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\DataAccess\\Class1.cs",
-              "RelativeToolTip": "DataAccess\\Class1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T16:28:59.466Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "TipoController.cs",
               "DocumentMoniker": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\Backend-NET\\Controllers\\TipoController.cs",
               "RelativeDocumentMoniker": "Backend-NET\\Controllers\\TipoController.cs",
               "ToolTip": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\Backend-NET\\Controllers\\TipoController.cs",
               "RelativeToolTip": "Backend-NET\\Controllers\\TipoController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBIAAAAmAAAA",
+              "ViewState": "AQIAACMAAAAAlJmZmZnZvzgAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T16:11:23.092Z",
               "EditorCaption": ""
@@ -100,14 +118,14 @@
               "RelativeDocumentMoniker": "Backend-NET\\Dtos\\ResultDto.cs",
               "ToolTip": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\Backend-NET\\Dtos\\ResultDto.cs",
               "RelativeToolTip": "Backend-NET\\Dtos\\ResultDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T16:05:49.016Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\Backend-NET\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Backend-NET\\Controllers\\WeatherForecastController.cs",
@@ -115,18 +133,17 @@
               "RelativeToolTip": "Backend-NET\\Controllers\\WeatherForecastController.cs",
               "ViewState": "AQIAAAcAAACAmZmZmZkhwBQAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T16:00:02.315Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-09T16:00:02.315Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\Backend-NET\\Program.cs",
               "RelativeDocumentMoniker": "Backend-NET\\Program.cs",
               "ToolTip": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\Backend-NET\\Program.cs",
               "RelativeToolTip": "Backend-NET\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAnAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T15:58:32.51Z",
               "EditorCaption": ""

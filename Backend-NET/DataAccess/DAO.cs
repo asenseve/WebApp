@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using DataAccess.Dtos;
+using Npgsql;
 
 namespace DataAccess
 {
@@ -13,7 +14,6 @@ namespace DataAccess
         {
             _dataSource = _dataSourceBuilder.Build();
         }
-
         public NpgsqlDataReader Consultar(string sql)
         {
             _conn = _dataSource.OpenConnection();
@@ -22,5 +22,18 @@ namespace DataAccess
             var reader = cmd.ExecuteReader();
             return reader;
         }
+        public int Insertar(string sql, List<ParameterDto> parameters)
+        {
+            _conn = _dataSource.OpenConnection();
+            using var cmd = _conn.CreateCommand();
+            cmd.CommandText = sql;
+            foreach (var par in parameters)
+            {
+                cmd.Parameters.AddWithValue(par.name, par.type, par.value);
+            }
+            int id = (int)cmd.ExecuteScalar();
+            return id;
+        }
+
     }
 }

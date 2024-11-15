@@ -1,0 +1,13 @@
+C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\DataAccess\bin\Debug\net8.0\DataAccess.deps.json
+C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\DataAccess\bin\Debug\net8.0\DataAccess.dll
+C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\DataAccess\bin\Debug\net8.0\DataAccess.pdb
+C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\DataAccess\obj\Debug\net8.0\DataAccess.csproj.AssemblyReference.cache
+C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\DataAccess\obj\Debug\net8.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfo.cs
+C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\DataAccess\obj\Debug\net8.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\DataAccess\obj\Debug\net8.0\DataAccess.sourcelink.json
+C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\DataAccess\obj\Debug\net8.0\DataAccess.dll
+C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
+C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\DataAccess\obj\Debug\net8.0\DataAccess.pdb
+C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll

@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "RcfT34i22jv/La/SD3jw6F7ndWxTwo2NTI8d/vwOecclnQlN4J41u09Afdo7n6gky498nraFk7dMVw5++fSSNw==",
+  "dgSpecHash": "+N/rskusR6NwUxrDyNXMX9PkJYJg7yzyGyWPjs2+GIdsaBg6xUt4+kqFdjw5vn9izOgyVVxKYubqiXsMvH+cyg==",
   "success": true,
   "projectFilePath": "C:\\Users\\asenseve\\Desktop\\DES611\\WebApp\\WebApp\\Backend-NET\\Backend-NET\\Backend-NET.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\asenseve\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\asenseve\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\asenseve\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\asenseve\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\asenseve\\.nuget\\packages\\npgsql\\8.0.5\\npgsql.8.0.5.nupkg.sha512",
     "C:\\Users\\asenseve\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\asenseve\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\asenseve\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

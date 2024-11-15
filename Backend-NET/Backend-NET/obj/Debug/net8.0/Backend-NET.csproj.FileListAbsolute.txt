@@ -31,3 +31,6 @@ C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\Backend-NET\obj\Debug
 C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\Backend-NET\obj\Debug\net8.0\Backend-NET.pdb
 C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\Backend-NET\obj\Debug\net8.0\Backend-NET.genruntimeconfig.cache
 C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\Backend-NET\obj\Debug\net8.0\ref\Backend-NET.dll
+C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\Backend-NET\bin\Debug\net8.0\Npgsql.dll
+C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\Backend-NET\bin\Debug\net8.0\DataAccess.dll
+C:\Users\asenseve\Desktop\DES611\WebApp\WebApp\Backend-NET\Backend-NET\bin\Debug\net8.0\DataAccess.pdb
