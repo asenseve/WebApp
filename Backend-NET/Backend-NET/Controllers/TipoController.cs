@@ -4,6 +4,7 @@ using System.Text.Json;
 using DataAccess.Models;
 using DataAccess.Dtos;
 using System.Text;
+using System.Web;
 
 namespace Backend_NET.Controllers
 {
@@ -33,12 +34,21 @@ namespace Backend_NET.Controllers
         }
         // POST: tipo/GuardarTipo
         [HttpPost("GuardarTipo")]
-        public IActionResult GuardarTipo()
+        public async Task<IActionResult> GuardarTipo()
         {
             ResultDto result = new ResultDto();
             try
             {
                 TipoDto data = new TipoDto();
+                using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
+                {
+                    //idtipo=0&nombre=Ejemplo&descripcion=EjemploDesc                    
+                    string sdata = await reader.ReadToEndAsync();
+                    var pdat = HttpUtility.ParseQueryString(sdata);
+                    data.idtipo = Convert.ToInt32(pdat.GetValues("idtipo")[0]);
+                    data.nombre = pdat.GetValues("nombre")[0];
+                    data.descripcion = pdat.GetValues("descripcion")[0];
+                }                
                 if (data.idtipo == 0)
                 {
                     int pk = model.GuardarTipo(data);
