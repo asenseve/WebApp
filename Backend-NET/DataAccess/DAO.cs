@@ -34,6 +34,17 @@ namespace DataAccess
             int id = (int)cmd.ExecuteScalar();
             return id;
         }
-
+        public bool Ejecutar(string sql, List<ParameterDto> parameters)
+        {
+            _conn = _dataSource.OpenConnection();
+            using var cmd = _conn.CreateCommand();
+            cmd.CommandText = sql;
+            foreach (var par in parameters)
+            {
+                cmd.Parameters.AddWithValue(par.name, par.type, par.value);
+            }
+            var filasAfectadas = cmd.ExecuteNonQuery();
+            return filasAfectadas > 0;
+        }
     }
 }

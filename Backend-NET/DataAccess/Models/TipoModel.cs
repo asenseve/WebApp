@@ -35,5 +35,24 @@ namespace DataAccess.Models
             return pk;
         }
 
+        public bool ModificarTipo(TipoDto data)
+        {
+            string sql = "UPDATE Tipo SET Nombre=@name, Descripcion=@desc WHERE idtipo=@idtipo";
+            List<ParameterDto> parameters = [
+                new ParameterDto { name = "@name", type = NpgsqlDbType.Varchar, value = data.nombre },
+                new ParameterDto { name = "@desc", type = NpgsqlDbType.Varchar, value = data.descripcion },
+                new ParameterDto { name = "@idtipo", type = NpgsqlDbType.Integer, value = data.idtipo }
+            ];
+            return dao.Ejecutar(sql, parameters);
+        }
+
+        public bool EliminarTipo(int idtipo)
+        {
+            string sql = "DELETE FROM Tipo WHERE idTipo=@idtipo";
+            List<ParameterDto> parameters = [
+                new ParameterDto { name = "@idtipo", type = NpgsqlDbType.Integer, value = idtipo }
+            ];
+            return dao.Ejecutar(sql, parameters);
+        }
     }
 }
