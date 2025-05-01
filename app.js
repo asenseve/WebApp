@@ -1,3 +1,5 @@
+// npm install dotenv -D // instalar el paquete dotenv
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const indexRoute = require('./routes/indexRoute');
